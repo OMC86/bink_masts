@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bink_phone_masts',
+    'mast_data',
 ]
 
 MIDDLEWARE = [

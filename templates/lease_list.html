@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for item in leaselist %}
+        <div>
+            <ul>
+                <li>Property Name: {{ item.property_name }}</li>
+                <li>Property Address: {{ item.property_address_1 }}, {{ item.property_address_2 }}
+                    {{ item.property_address_3 }} {{ item.property_address_4 }} </li>
+                <li>Unit Name: {{ item.unit_name }}</li>
+                <li>Tenant Name: {{ item.tenant_name }}</li>
+                <li>Lease Start Date: {{ item.lease_start_date }}</li>
+                <li>Lease End Date: {{ item.lease_end_date }}</li>
+                <li>Lease Years: {{ item.lease_years }}</li>
+                <li>Current rent: {{ item.current_rent }}</li>
+            </ul>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import include, url
-from bink_phone_masts import views
+from mast_data import views
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url(r'^$', views.say_hello),
+    url(r'^$', views.lease_list),
 
 ]
