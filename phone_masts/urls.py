@@ -19,6 +19,6 @@ from mast_data import views
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url(r'^$', views.lease_list),
 
+    url(r'', include('mast_data.urls'))
 ]
