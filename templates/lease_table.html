@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Property Name</th>
+            <th>Property Address</th>
+            <th>Unit Name</th>
+            <th>Tenant Name</th>
+            <th>Lease Start Date</th>
+            <th>Lease End Date</th>
+            <th>Lease Years</th>
+            <th>Current Rent</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for item in table %}
+                <tr>
+                    <td>{{ item.property_name }}</td>
+                    <td>{{ item.property_address_1 }}, {{ item.property_address_2 }}
+                    {{ item.property_address_3 }} {{ item.property_address_4 }}</td>
+                    <td>{{ item.unit_name }}</td>
+                    <td>{{ item.tenant_name }}</td>
+                    <td>{{ item.lease_start_date }}</td>
+                    <td>{{ item.lease_end_date }}</td>
+                    <td>{{ item.lease_years }}</td>
+                    <td>{{ item.current_rent }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'ascending' %}">Ascending</a>
+    <a href="{% url 'descending' %}">Descending</a>
+{% endblock %}
