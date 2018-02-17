@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Sum
 
 
 class Masts(models.Model):
@@ -17,6 +18,10 @@ class Masts(models.Model):
     lease_end_date = models.CharField(max_length=100)
     lease_years = models.IntegerField(default=0)
     current_rent = models.DecimalField(max_digits=7, decimal_places=2)
+
+    def total_rent(self):
+        return Masts.objects.aggregate(Sum('current_rent'))
+
 
     def __unicode__(self):
         return self.property_name
