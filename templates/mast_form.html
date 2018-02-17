@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load bootstrap_tags %}
+    <h2>New Mast Entry Form</h2>
+    <div class="row">
+        <div class="col-sm-10">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form | as_bootstrap }}
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
