@@ -37,13 +37,14 @@
 
              <div>
                  <h3>Tenant and Number of Masts</h3>
-                {% for item in table %}
+
                     <ul>
                         <li>{% for key,value in naf_dict.items %}
+                            {% for item in table %}
                             {% if key in item.tenant_name %}
-                            <strong>Tenant Name:</strong> {{ key }} -- <strong>Number of Masts</strong> {{ value }}<br></li>
-                        {% endif %}
-                    {% endfor %}
+                                <strong>Tenant Name:</strong> {{ key }} -- <strong>Number of Masts</strong> {{ value }}<br></li>
+                            {% endif %}
+                        {% endfor %}
                     {% endfor %}
                     </ul>
                 </div>
